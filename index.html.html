@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Sattaragi - Aerospace Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2a4a7f;
+            --accent: #3182ce;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #4a5568;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 6px;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        nav ul li a:hover::after {
+            width: 80%;
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0;
+            gap: 40px;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p:first-of-type {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 320px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+            filter: brightness(1.02);
+        }
+        
+        .hero-image img:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 35px;
+            position: relative;
+            padding-left: 25px;
+            border-left: 3px solid var(--accent);
+            padding-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--primary);
+        }
+        
+        .experience-title, .education-title, .project-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .experience-company, .education-institution {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .experience-date, .education-date, .project-date {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-bottom: 10px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-category h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .skill-tag {
+            background-color: #e2e8f0;
+            padding: 8px 18px;
+            border-radius: 25px;
+            display: inline-block;
+            font-size: 0.95rem;
+            color: var(--dark);
+            margin-right: 12px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item a {
+            display: flex;
+            align-items: center;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            background-color: var(--primary);
+        }
+        
+        .contact-item:hover a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+        
+        .achievement-item {
+            margin-bottom: 25px;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .achievement-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--primary);
+        }
+        
+        .achievement-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .portfolio-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.95);
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.08);
+            filter: brightness(1.05);
+        }
+        
+        .portfolio-details {
+            padding: 30px;
+        }
+        
+        .portfolio-details ul li {
+            margin: 8px 0;
+            color: var(--text);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+        }
+        
+        .download-resume {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
+        }
+        
+        .download-resume:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(49, 130, 206, 0.4);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 0;
+            }
+            
+            .hero-content {
+                margin-bottom: 30px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p:first-of-type {
+                font-size: 1rem;
+            }
+            
+            .hero-image img {
+                max-width: 200px;
+            }
+            
+            nav {
+                padding: 10px 0;
+                position: relative;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: var(--primary);
+                width: 100%;
+                padding: 10px 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            nav ul.show {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .portfolio-image {
+                height: 200px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .contact-item {
+                width: 100%;
+            }
+            
+            .modal-images img {
+                max-width: 90%;
+                margin: 10px;
+            }
+            
+            .skill-tag {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .achievement-item {
+                padding: 20px;
+            }
+            
+            .experience-item, .education-item, .project-item {
+                padding-left: 15px;
+                margin-bottom: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-image img {
+                max-width: 150px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .download-resume {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .social-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            margin-top: 50px;
+        }
+
+        .modal-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .modal-images img {
+            max-width: 45%;
+            height: auto;
+            margin: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            filter: brightness(0.95);
+        }
+
+        .modal-images img:hover {
+            transform: scale(1.03);
+            filter: brightness(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Full screen image styles */
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            overflow: hidden;
+        }
+
+        .fullscreen-image {
+            margin: auto;
+            display: block;
+            max-width: 95%;
+            max-height: 95vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: zoom-in;
+            transition: all 0.3s ease;
+            user-select: none; /* Prevent image dragging */
+        }
+
+        .fullscreen-image.zoomed {
+            max-width: 200%;
+            max-height: 200vh;
+            cursor: grab;
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .fullscreen-image.zoomed:active {
+            cursor: grabbing;
+        }
+
+        .zoom-instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            opacity: 0.8;
+            z-index: 1002;
+            pointer-events: none;
+        }
+
+        .fullscreen-close {
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            color: #f1f1f1;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .portfolio-item {
+            cursor: pointer;
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Prashant S Sattaragi</h1>
+                    <p>Aerospace Engineer | Flight Dynamics Specialist | UAV Developer</p>
+                    <p style="margin-top: 20px;">
+                        Passionate about flight dynamics, control systems, and UAV development with hands-on experience in 
+                        aerodynamic analysis, stability evaluation, and computational simulations.
+                    </p>
+                    <div class="social-icons" style="margin-top: 25px;">
+                        <a href="https://github.com/Prashant0119" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/prashant-s-sattaragi-415772197/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1lQhsqhd1bMITU2fb5bcAoUyUSnBGWPAO/view?usp=sharing" class="download-resume" target="_blank">Download Resume</a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/prashant.jpg" alt="Prashant Sattaragi">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am an Aerospace Engineer with a strong passion for flight dynamics, control systems, and UAV development. 
+                My expertise includes aerodynamic analysis, stability evaluation, and computational simulations. I have extensive 
+                hands-on experience in UAV design, testing, and certification processes, having worked on projects ranging from 
+                nano-scale surveillance drones to large fixed-wing aircraft and eVTOL platforms.
+            </p>
+            <p style="margin-top: 15px;">
+                Throughout my professional journey, I've contributed to DGCA-type certification processes, developed innovative 
+                telemetry systems, and performed complex CFD calculations. My background in both theoretical aerospace principles 
+                and practical implementation allows me to bridge the gap between design concepts and real-world flight performance.
+            </p>
+            <p style="margin-top: 15px;">
+                I'm particularly interested in pushing the boundaries of UAV capabilities, especially in the areas of endurance, 
+                stability, and specialized applications like firefighting and high-altitude operations.
+            </p>
+        </div>
+    </section>
+    
+    <section id="experience" class="section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">Flight Physics Engineer</div>
+                <div class="experience-company">NextLeap Aeronautics</div>
+                <div class="experience-date">August 2023 - February 2024</div>
+                <ul style="padding-left: 20px;">
+                    <li>Contributed to the DGCA-type certification of a medium-category hexacopter UAV, including flight testing and documentation preparation.</li>
+                    <li>Played a key role in the development of nano and micro UAVs for ISR, resulting in a lightweight (250g and 350g) and highly capable platform. Did CAD design, component selection, and flight testing.</li>
+                    <li>Developed key subsystems to support the integration of a 640x512 thermal camera that enables 170m target identification.</li>
+                    <li>Verified the flight dynamics properties of a 3.4m span fixed-wing UAV using JSBSim, MATLAB, and FlightGear.</li>
+                    <li>Performed CFD calculations on a 60-inch propeller and used internal measurements from a test bench to confirm the performance.</li>
+                    <li>Developed a LoRa and STM32-based telemetry system for MAVLink vehicles, supporting 2.4GHz, 915MHz, and dual-band configurations.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Design Intern</div>
+                <div class="experience-company">NextLeap Aeronautics</div>
+                <div class="experience-date">September - October 2022 and April - May 2023</div>
+                <ul style="padding-left: 20px;">
+                    <li>Assisted in manufacturing of a full composite 36kg 3.2m span eVTOL UAV.</li>
+                    <li>Involved in the design of solar tail-sitter flying wing VTOL UAV.</li>
+                    <li>Comprehensive aerodynamic/CFD analysis of the tail-sitter VTOL UAV with OpenFOAM and MSC Cradle, to evaluate its performance and ensure stable flight characteristics.</li>
+                    <li>Worked with a variety of carbon fibre manufacturing techniques, including wet layup and vacuum-assisted resin infusion.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Design Engineer</div>
+                <div class="experience-company">Team Vyoma</div>
+                <div class="experience-date">September 2019 - January 2023</div>
+                <ul style="padding-left: 20px;">
+                    <li>Involved in Design of 8 RC planes during my tenure.</li>
+                    <li>Involved in design and manufacturing planes in accordance with problem statements in national and international competition (IIT-BOEING aeromodelling competition and Design build and fly, DBF).</li>
+                    <li>Used balsa wood, depron sheets and carbon fibre for manufacturing.</li>
+                    <li>Technical writing on Flapping characteristics of various kinds of Aerofoils.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-title">Bachelor of Engineering in Aerospace Engineering</div>
+                <div class="education-institution">R V College of Engineering, Bengaluru</div>
+                <div class="education-date">June 2019 - August 2023</div>
+                <p>GPA: 8.13/10</p>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-title">Pre-University Course (PUC)</div>
+                <div class="education-institution">Alva's P U College, Mudubidri</div>
+                <div class="education-date">July 2017 - June 2021</div>
+                <p>Percentage: 90.64%</p>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-title">Primary and Secondary Education</div>
+                <div class="education-institution">Kendriya Vidyalaya, Bengaluru</div>
+                <div class="education-date">April 2007 - March 2017</div>
+                <p>CGPA: 10/10</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">Design of a Solar HALE UAV with a 45-day endurance</div>
+                <div class="project-date">April 2023 - June 2023</div>
+                <p>College major project focused on designing aerodynamic parameters to meet industry customer requirements:</p>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li>Designed a high-altitude pseudo satellite platform with 45-day endurance capability</li>
+                    <li>Selected optimal propulsion system including BLDC motors, batteries, and solar panels to sustain the 45-day mission phases</li>
+                    <li>Performed comprehensive aerodynamic analysis and performance calculations</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">Conceptual Design of a Water-scooping Amphibian Aircraft</div>
+                <div class="project-date">May 2022 - August 2022</div>
+                <p>College minor project focused on firefighting aircraft design:</p>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li>Successfully completed conceptual design of a water-scooping amphibian aircraft for firefighting purposes</li>
+                    <li>Performed weight estimation, sizing and performance parameters calculation based on customer requirements</li>
+                    <li>Developed detailed specifications and operational parameters</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- New Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            
+            <div class="portfolio-grid" style="grid-template-columns: repeat(2, 1fr); gap: 40px;">
+                <!-- Academic Projects -->
+                <div class="portfolio-item" onclick="openAcademicGallery()">
+                    <div class="portfolio-image">
+                        <img src="images/solarVTOL.jpg" alt="Solar VTOL UAV">
+                    </div>
+                    <div class="portfolio-details">
+                        <h3 class="portfolio-title">Academic & Research Projects</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 10px;">
+                            <li>• Solar HALE UAV Design (45-day endurance)</li>
+                            <li>• SolarVTOL CFD Analysis and performance calculations(internship)</li>
+                            <li>• Building RC Planes for various competitions</li>
+                            <li>• Water-scooping Amphibian Aircraft Design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NextLeap Projects -->
+                <div class="portfolio-item" onclick="openNextLeapGallery()">
+                    <div class="portfolio-image">
+                        <img src="images/Black_Drongo.jpg" alt="NextLeap Projects">
+                    </div>
+                    <div class="portfolio-details">
+                        <h3 class="portfolio-title">NextLeap Aeronautics Projects</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 10px;">
+                            <li>• Flight testing for medium category hexacopter UAV type certification</li>
+                            <li>• Black Drongo/Prahari Nano ISR UAV (250g class)</li>
+                            <li>• High-Altitude Propulsion system Testing CFD Analysis</li>
+                            <li>• Custom Telemetry System Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px; text-align: center; font-style: italic;">Click on either project to view detailed images and technical analysis</p>
+        </div>
+    </section>
+    
+    <!-- Academic Modal Gallery -->
+    <div id="academicGalleryModal" class="modal">
+        <span class="close" onclick="closeAcademicGallery()">&times;</span>
+        <div class="modal-images">
+            <img src="images/solarVTOL.jpg" alt="Solar VTOL" title="Solar HALE UAV Design" onclick="openFullscreen(this.src, this.title, this.alt)">
+            <img src="images/CFD1.jpg" alt="CFD Analysis 1" title="CFD Analysis" onclick="openFullscreen(this.src, this.title, this.alt)">
+            <img src="images/CFD2.jpg" alt="CFD Analysis 2" title="Flow Visualization" onclick="openFullscreen(this.src, this.title, this.alt)">
+            <img src="images/claoa.jpg" alt="CL vs AOA" title="Aerodynamic Performance" onclick="openFullscreen(this.src, this.title, this.alt)">
+            <img src="images/surface mesh2.jpg" alt="Surface Mesh" title="Surface Mesh Generation" onclick="openFullscreen(this.src, this.title, this.alt)">
+            <img src="images/poster.jpg" alt="Postprocessing" title="Postprocessing" onclick="openFullscreen(this.src, this.title, this.alt)">
+        </div>
+    </div>
+
+    <!-- NextLeap Modal Gallery -->
+    <div id="nextleapGalleryModal" class="modal">
+        <span class="close" onclick="closeNextLeapGallery()">&times;</span>
+        <div class="modal-images">
+            <img src="images/prahari.jpg" alt="Prahari Hexacopter" title="Prahari - DGCA-certified Medium Category Hexacopter" onclick="openFullscreen(this.src, this.title, this.alt)">
+            <img src="images/Black_Drongo.jpg" alt="Black Drongo" title="Black Drongo - Nano ISR UAV" onclick="openFullscreen(this.src, this.title, this.alt)">
+            <img src="images/hexagon.jpg" alt="High-Altitude Testing" title="High-Altitude CFD Analysis" onclick="openFullscreen(this.src, this.title, this.alt)">
+        </div>
+    </div>
+
+    <!-- Fullscreen Image Modal -->
+    <div id="fullscreenModal" class="fullscreen-modal">
+        <span class="fullscreen-close" onclick="closeFullscreen()">&times;</span>
+        <img id="fullscreenImage" class="fullscreen-image" src="" alt="" onclick="toggleZoom(this)">
+        <div class="zoom-instructions">Click image to zoom in/out</div>
+    </div>
+    
+    <section id="skills" class="section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skill-category">
+                <h3>Software & Tools</h3>
+                <div class="skills">
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">OpenFoam</span>
+                    <span class="skill-tag">SolidWorks</span>
+                    <span class="skill-tag">XFLR5</span>
+                    <span class="skill-tag">KiCad</span>
+                    <span class="skill-tag">JSBSim</span>
+                    <span class="skill-tag">Linux</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">LaTeX</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Libraries</h3>
+                <div class="skills">
+                    <span class="skill-tag">OpenCV</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Technical Expertise</h3>
+                <div class="skills">
+                    <span class="skill-tag">Flight Dynamics</span>
+                    <span class="skill-tag">Control Systems</span>
+                    <span class="skill-tag">UAV Development</span>
+                    <span class="skill-tag">Aerodynamic Analysis</span>
+                    <span class="skill-tag">CFD Simulation</span>
+                    <span class="skill-tag">Composite Manufacturing</span>
+                    <span class="skill-tag">Propulsion Systems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">Achievements & Certifications</h2>
+            
+            <div class="achievement-item">
+                <div class="achievement-title">2nd Runner-up in Hexagon User Conference, 2023</div>
+                <p>Recognized for my paper on the performance of propellers at high altitudes, winning a cash prize of INR 30,000. <a href="https://hexagon.com/resources/resource-library/nextleap-aeronautics-transformed-high-altitude-drone-testing" target="_blank">Read the case study</a> about how we used Hexagon's Cradle CFD for high-altitude drone testing.</p>
+            </div>
+            
+            <div class="achievement-item">
+                <div class="achievement-title">NPTEL Certification: Introduction to Aircraft Design</div>
+                <p>Successfully completed the comprehensive course on aircraft design principles and methodologies.</p>
+            </div>
+            
+            <div class="achievement-item">
+                <div class="achievement-title">NPTEL Certification: The Joy of Computing using Python</div>
+                <p>Completed advanced Python programming course with applications in computational problem-solving.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <a href="tel:+916366321166">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p><strong>Phone</strong></p>
+                            <p>+91 6366321166</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="contact-item">
+                    <a href="mailto:prashantsattaragi@gmail.com">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p><strong>Email</strong></p>
+                            <p>prashantsattaragi@gmail.com</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="contact-item">
+                    <a href="https://www.linkedin.com/in/prashant-s-sattaragi-415772197/" target="_blank">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div>
+                            <p><strong>LinkedIn</strong></p>
+                            <p>Prashant S Sattaragi</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="contact-item">
+                    <a href="https://github.com/Prashant0119" target="_blank">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <p><strong>GitHub</strong></p>
+                            <p>Prashant0119</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="contact-item">
+                    <a href="https://maps.google.com/?q=Bangalore,Karnataka,India" target="_blank">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p><strong>Location</strong></p>
+                            <p>Bangalore, Karnataka, India</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <h3 style="margin-bottom: 20px; color: var(--dark);">Get In Touch</h3>
+                <p>I'm always open to discussing new projects, opportunities for collaboration, or just having a conversation about aerospace engineering and UAV technology.</p>
+                <p style="margin-top: 10px;">Feel free to reach out using any of the contact methods above!</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Prashant S Sattaragi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery Modal Functions
+        function openAcademicGallery() {
+            document.getElementById('academicGalleryModal').style.display = 'block';
+        }
+
+        function closeAcademicGallery() {
+            document.getElementById('academicGalleryModal').style.display = 'none';
+        }
+
+        function openNextLeapGallery() {
+            document.getElementById('nextleapGalleryModal').style.display = 'block';
+        }
+
+        function closeNextLeapGallery() {
+            document.getElementById('nextleapGalleryModal').style.display = 'none';
+        }
+
+        // Fullscreen Image Functions with Panning
+        let isDragging = false;
+        let startX, startY;
+        let translateX = 0;
+        let translateY = 0;
+        let lastX = 0;
+        let lastY = 0;
+
+        function openFullscreen(imgSrc, imgTitle, imgAlt) {
+            const fullscreenModal = document.getElementById('fullscreenModal');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            fullscreenImage.src = imgSrc;
+            fullscreenImage.alt = imgAlt;
+            fullscreenImage.title = imgTitle;
+            fullscreenImage.classList.remove('zoomed');
+            fullscreenModal.style.display = 'block';
+            
+            // Reset transform values
+            translateX = 0;
+            translateY = 0;
+            lastX = 0;
+            lastY = 0;
+            updateImageTransform(fullscreenImage);
+        }
+
+        function closeFullscreen() {
+            const fullscreenModal = document.getElementById('fullscreenModal');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            fullscreenImage.classList.remove('zoomed');
+            fullscreenModal.style.display = 'none';
+            
+            // Reset transform values
+            translateX = 0;
+            translateY = 0;
+            lastX = 0;
+            lastY = 0;
+            updateImageTransform(fullscreenImage);
+        }
+
+        function toggleZoom(img) {
+            img.classList.toggle('zoomed');
+            if (!img.classList.contains('zoomed')) {
+                // Reset position when zooming out
+                translateX = 0;
+                translateY = 0;
+                lastX = 0;
+                lastY = 0;
+            }
+            updateImageTransform(img);
+        }
+
+        function updateImageTransform(img) {
+            if (img.classList.contains('zoomed')) {
+                img.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px)) scale(1.5)`;
+            } else {
+                img.style.transform = 'translate(-50%, -50%)';
+            }
+        }
+
+        // Mouse event handlers for panning
+        document.getElementById('fullscreenImage').addEventListener('mousedown', function(e) {
+            if (!this.classList.contains('zoomed')) return;
+            isDragging = true;
+            startX = e.clientX - lastX;
+            startY = e.clientY - lastY;
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            const img = document.getElementById('fullscreenImage');
+            if (!isDragging || !img.classList.contains('zoomed')) return;
+            
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+
+            // Limit panning to reasonable bounds (40% of image size)
+            const maxTranslate = Math.min(img.width, img.height) * 0.4;
+            translateX = Math.max(Math.min(translateX, maxTranslate), -maxTranslate);
+            translateY = Math.max(Math.min(translateY, maxTranslate), -maxTranslate);
+            
+            lastX = translateX;
+            lastY = translateY;
+            
+            updateImageTransform(img);
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+        });
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target.className === 'modal' || event.target.className === 'fullscreen-modal') {
+                if (event.target.className === 'fullscreen-modal') {
+                    const fullscreenImage = document.getElementById('fullscreenImage');
+                    fullscreenImage.classList.remove('zoomed');
+                    // Reset transform values
+                    translateX = 0;
+                    translateY = 0;
+                    updateImageTransform(fullscreenImage);
+                }
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Add mobile menu toggle functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.querySelector('nav ul');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && !e.target.closest('#menuToggle')) {
+                navMenu.classList.remove('show');
+            }
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
