@@ -1,6 +1,6 @@
 # Prashant Sattaragi - Personal Website
 
-This is my personal portfolio website showcasing my work as an Aerospace Engineer, Flight Dynamics Specialist, and UAV Developer.
+This is my personal portfolio website showcasing my work as an Aerospace Engineer, Flight Physics engineer, and UAV Developer.
 
 ## Features
 - Responsive design
