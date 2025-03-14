@@ -16,8 +16,7 @@ This is my personal portfolio website showcasing my work as an Aerospace Enginee
 - JavaScript
 - Font Awesome for icons
 
-## View Website
-The website is hosted using GitHub Pages and can be viewed at: [your-username.github.io]
+
 
 ## Contact
 For any inquiries, please reach out to me at prashantsattaragi@gmail.com 
